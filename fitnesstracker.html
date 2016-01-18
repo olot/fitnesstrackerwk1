@@ -1,11 +1,27 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
   <title>Fitness Tracker</title>
+  <script src="http://maps.googleapis.com/maps/api/js">
+  </script>
+
+  <script>
+    function initialize() {
+      var mapProp = {
+        center: new google.maps.LatLng(51.508742, -0.120850),
+        zoom: 5,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
 </head>
+
 <body>
-<h3>Activities</h2><select>
+  <h3>Activities</h2><select>
   <option value="running">Running</option>
   <option value="cycling">Cycling</option>
   <option value="rowing">Rowing</option>
@@ -13,17 +29,28 @@
 </select>
 
 <h3>Time</h3>
-<form action="action_page.php">
-  <input type="time" name="usr_time">
-  <input type="submit">
-</form>
-<h3>Distance</h3>
-<form action="action_page.php">
-  Length in Km (between 1 and 100):
-  <input type="number" name="quantity" min="1" max="100">
-  <input type="submit">
-</form>
-<h3>Location</h3>
-<h3>Mood Rating</h3>
-<h3>Quote of the Day</h3>
+  <form action="action_page.php">
+    <input type="time" name="usr_time">
+    <input type="submit">
+  </form>
+  <h3>Distance</h3>
+  <form action="action_page.php">
+    Length in Km (between 1 and 100):
+    <input type="number" name="quantity" min="1" max="100">
+    <input type="submit">
+  </form>
+  <h3>Location</h3>
+    <div id="googleMap" style="width:500px;height:380px;"></div>
+  <h3>Mood Rating</h3>
+  <div id="emotion">
+    <input type="radio" name="emotion" id="sad" />
+        <label for="sad"><img src="sad_image.png" alt="I'm sad" /></label>
+        <input type="radio" name="emotion" id="medium" />
+            <label for="happy"><img src="medium_image.png" alt="I'm medium" /></label>
+            <input type="radio" name="emotion" id="medium" />
+                <label for="happy"><img src="terrible_image.png" alt="I'm terrible" /></label>
+    <input type="radio" name="emotion" id="happy" />
+        <label for="happy"><img src="happy_image.png" alt="I'm happy" /></label>
+</div>
+  <h3>Quote of the Day</h3>
 </body>
