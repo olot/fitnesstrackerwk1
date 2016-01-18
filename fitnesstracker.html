@@ -9,8 +9,7 @@
 
 </head>
 <body>
-<h2>Activities</h2>
-<select>
+<h3>Activities</h2><select>
   <option value="running">Running</option>
   <option value="cycling">Cycling</option>
   <option value="rowing">Rowing</option>
@@ -18,8 +17,17 @@
 </select>
 
 <h3>Time</h3>
-<h4>Distance</h4>
-<h5>Location</h5>
-<h6>Mood Rating</h6>
-<h7>Quote of the Day</h7>
+<form action="action_page.php">
+  <input type="time" name="usr_time">
+  <input type="submit">
+</form>
+<h3>Distance</h3>
+<form action="action_page.php">
+  Length in Km (between 1 and 100):
+  <input type="number" name="quantity" min="1" max="100">
+  <input type="submit">
+</form>
+<h3>Location</h3>
+<h3>Mood Rating</h3>
+<h3>Quote of the Day</h3>
 </body>
